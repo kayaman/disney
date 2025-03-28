@@ -15,15 +15,19 @@ home: http://disney.magj.dev
 sources:
   - https://github.com/kayaman/disney
 dependencies:
-  - name: mickey
-    version: '0.1.0'
-    repository: https://github.com/kayaman/mickey-service
+  - name: mickey-service
+    version: ~1.0.0
+    repository: https://kayaman.github.io/mickey-service
     condition: mickey.enabled
     tags:
       - learning
       - helm
       - fun
     alias: disney
+  - name: parrot
+    version: ~0.0.3
+    repository: 'https://kayaman.github.io/parrot'
+    condition: parrot.enabled
 maintainers:
   - name: Marco Antonio Gonzalez Junior
     email: m@rco.sh

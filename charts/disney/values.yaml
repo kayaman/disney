@@ -33,3 +33,6 @@ mickey-service:
         paths:
           - path: /
             pathType: Prefix
+
+parrot:
+  enabled: true
