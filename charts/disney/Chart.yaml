@@ -1,0 +1,36 @@
+apiVersion: v2
+name: disney
+description: A ludic project to learn about Helm and Kubernetes.
+type: application
+version: 0.1.0
+appVersion: '1.16.0'
+kubeVersion: '1.32'
+keywords:
+  - disney
+  - helm
+  - kubernetes
+  - learning
+  - fun
+home: http://disney.magj.dev
+sources:
+  - https://github.com/kayaman/disney
+dependencies:
+  - name: mickey
+    version: '0.1.0'
+    repository: https://github.com/kayaman/mickey-service
+    condition: mickey.enabled
+    tags:
+      - learning
+      - helm
+      - fun
+    alias: disney
+maintainers:
+  - name: Marco Antonio Gonzalez Junior
+    email: m@rco.sh
+    url: https://learn.magj.dev
+icon: http://disney.magj.dev/assets/disney.svg
+deprecated: false # Whether this chart is deprecated (optional, boolean)
+annotations:
+  mickey: Mickey Mouse is an iconic, cheerful, and adventurous cartoon character created by Walt Disney who serves as the mascot of The Walt Disney Company.
+  donald: Donald Duck is a quick-tempered yet lovable Disney cartoon character known for his distinctive voice, sailor outfit, and comically unfortunate escapades.
+  goofy: Goofy is a tall, clumsy, and good-natured anthropomorphic dog character from Disney who is known for his distinctive laugh and lovable innocence.

@@ -1,0 +1,35 @@
+global:
+  environment: production
+  imageRegistry: ghcr.io/kayaman
+  imagePullSecrets:
+    - name: github-registry
+  domain: disney.magj.dev
+  monitoring:
+    enabled: true
+  logging:
+    enabled: true
+
+mickey-service:
+  enabled: true
+  replicaCount: 1
+  image:
+    repository: ghcr.io/kayaman/mickey-service
+    tag: latest
+    pullPolicy: Always
+  resources:
+    limits:
+      cpu: 300m
+      memory: 512Mi
+    requests:
+      cpu: 150m
+      memory: 256Mi
+  service:
+    type: ClusterIP
+    port: 7001
+  ingress:
+    enabled: true
+    hosts:
+      - host: mickey.disney.magj.dev
+        paths:
+          - path: /
+            pathType: Prefix
