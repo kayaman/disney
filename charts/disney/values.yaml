@@ -10,7 +10,7 @@ global:
     enabled: true
 
 mickey-service:
-  enabled: true
+  enabled: false
   replicaCount: 1
   image:
     repository: ghcr.io/kayaman/mickey-service
@@ -34,5 +34,29 @@ mickey-service:
           - path: /
             pathType: Prefix
 
+goofy-service:
+  enabled: true
+  replicaCount: 1
+  image:
+    repository: ghcr.io/kayaman/goofy-service
+    tag: latest
+    pullPolicy: Always
+  resources:
+    limits:
+      cpu: 300m
+      memory: 512Mi
+    requests:
+      cpu: 150m
+      memory: 256Mi
+  service:
+    type: ClusterIP
+    port: 7002
+  ingress:
+    enabled: true
+    hosts:
+      - host: goofy.disney.magj.dev
+        paths:
+          - path: /
+            pathType: Prefix
 parrot:
   enabled: true

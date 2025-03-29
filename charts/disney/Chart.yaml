@@ -6,24 +6,23 @@ version: 0.1.0
 appVersion: '1.16.0'
 kubeVersion: '1.32'
 keywords:
-  - disney
   - helm
   - kubernetes
   - learning
   - fun
-home: http://disney.magj.dev
+home: kayaman.github.io/disney
 sources:
   - https://github.com/kayaman/disney
 dependencies:
-  - name: mickey-service
-    version: ~1.0.0
-    repository: https://kayaman.github.io/mickey-service
-    condition: mickey.enabled
+  - name: goofy-service
+    version: ~0.0.1
+    repository: https://kayaman.github.io/goofy-service
+    condition: goofy.enabled
     tags:
       - learning
       - helm
       - fun
-    alias: disney
+    alias: goofy
   - name: parrot
     version: ~0.0.3
     repository: 'https://kayaman.github.io/parrot'

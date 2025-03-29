@@ -1,0 +1,51 @@
+apiVersion: v1
+entries:
+  disney:
+    - annotations:
+        donald: Donald Duck is a quick-tempered yet lovable Disney cartoon character
+          known for his distinctive voice, sailor outfit, and comically unfortunate
+          escapades.
+        goofy: Goofy is a tall, clumsy, and good-natured anthropomorphic dog character
+          from Disney who is known for his distinctive laugh and lovable innocence.
+        mickey: Mickey Mouse is an iconic, cheerful, and adventurous cartoon character
+          created by Walt Disney who serves as the mascot of The Walt Disney Company.
+      apiVersion: v2
+      appVersion: 1.16.0
+      created: '2025-03-28T23:16:44.802222948Z'
+      dependencies:
+        - name: mickey-service
+          condition: mickey.enabled
+          version: ~1.0.0
+          alias: mickey
+          repository: https://kayaman.github.io/mickey-service
+          tags:
+            - learning
+            - helm
+            - fun
+        - name: parrot
+          condition: parrot.enabled
+          version: ~0.0.3
+          repository: https://kayaman.github.io/parrot
+      description: A ludic project to learn about Helm and Kubernetes.
+      digest: d6257e849278b512a7c939acb63314f2c704ee76dad2329d77b5f9a08bc165f9
+      home: http://disney.magj.dev
+      icon: http://disney.magj.dev/assets/disney.svg
+      keywords:
+        - disney
+        - helm
+        - kubernetes
+        - learning
+        - fun
+      kubeVersion: '1.32'
+      maintainers:
+        - email: m@rco.sh
+          name: Marco Antonio Gonzalez Junior
+          url: https://learn.magj.dev
+      name: disney
+      sources:
+        - https://github.com/kayaman/disney
+      type: application
+      urls:
+        - https://github.com/kayaman/disney/releases/download/disney-0.1.0/disney-0.1.0.tgz
+      version: 0.1.0
+generated: '2025-03-28T23:16:44.80222963Z'
